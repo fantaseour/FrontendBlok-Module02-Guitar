@@ -1,0 +1,27 @@
+@use 'fonts';
+@use 'var';
+
+
+.box {
+    background-color: var.$bg;
+    &__title {
+        color: #f00;
+    }
+    &__image {
+        max-width: 200px
+    }
+}
+
+
+body {
+    font-family: var.$font;
+}
+
+a {
+    transition: var.$tr;
+    color: var.$dark;
+}
+
+a:hover {
+    color: var.$accent;
+}
