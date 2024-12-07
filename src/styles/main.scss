@@ -28,6 +28,15 @@ a {
     justify-content: space-between;
     height: 66px;
     position: relative;
+    &::before {
+        content: '';
+        width: 100%;
+        height: 25px;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        background-color: var.$accent;
+    }
     &::after {
         content: '';
         display: block;
@@ -38,19 +47,23 @@ a {
         background-size: contain;
         position: absolute;
         bottom: -20px;
-    }
-    &__decor {
-        flex-grow: 1;
-        & > img {
-            height: 66px;
-            width: 100%;
-        }
-
+        display: block;
     }
     &__logo {
         background-color: var.$accent;
         padding: 17px 45px 0 45px;
         border-radius: 10px 0 0 0;
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            width: 68px;
+            height: 66px;
+            background-image: url('../images/header-center-left.svg');
+            position: absolute;
+            right: -68px;
+            top: 0;
+        }
     }
 
     &__link {
@@ -59,5 +72,18 @@ a {
         background-color: var.$accent;
         padding: 17px 45px 0 45px;
         border-radius: 0 10px 0 0;
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            width: 68px;
+            height: 66px;
+            background-image: url('../images/header-center-right.svg');
+            position: absolute;
+            left: -68px;
+            top: 0;
+        }
+
     }
+    
 }
